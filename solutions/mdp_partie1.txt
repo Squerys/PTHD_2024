@@ -1,0 +1,8 @@
+On sait que le mot de passe est un des plus utilisé en france
+Authentification coté client en js, mais le js est bien trop obfusqué pour un problème aussi simple --> solution ailleurs
+
+Le top 20 des mots de passe les plus choisis en France : 123456, 123456789, azerty, 1234561, azertyuiop, avf2013, loulou, 000000, password, doudou, marseille, amiret2015, motdepasse, soleil, 12345, 1234567891, cheval, bonjour, chouchou, jetaime.
+
+motdepasse --> Succès
+
+On a donc le flag

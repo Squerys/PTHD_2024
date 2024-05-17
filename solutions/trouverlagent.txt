@@ -1,0 +1,10 @@
+Partie 1:
+Première image, on fait une recherche inversée:
+On a le nom du parc, on le cherche dans sa langue d'origine et on a le flag
+
+Partie 2:
+Seconde image, on la route sur la quelle se trouve la voiture, la distance de barcelone, le numéro de sortie 99, ce qui nous permet de localiser la voiture et d'établir une zone de 45km
+Sur la troisième image on une enseigne d'hotel particulière et un restaurant se terminant par "icu"
+On continue de restituer l'itinéraire grace à la seconde image, on trouve un hotel se terminant par "beach" dans la ville de destination
+On cherche un restaurant finissant par icu
+Et on trouve la rue

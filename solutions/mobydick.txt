@@ -1,0 +1,8 @@
+Le string à déchiffrer:
+-... --- -. .--- --- ..- .-. / .--. . - .. - / -- --- .-. ... .
+/ - ..- / .- ... / -.. . -.-. --- -.. . / -- --- -. / -- . ... ... .- --. . /
+---... / ..-. .-.. .- --. / ... . .- .-.. --- ...- . .-.
+
+On reconnait du morse, décodé cela donne:
+BONJOUR PETIT MORSE TU AS DECODE MON MESSAGE : FLAG SEALOVER
+On a le flag

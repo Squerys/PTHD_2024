@@ -1,0 +1,43 @@
+On a une capture de paquets
+On l'ouvre dans wireshark, l'énoncé parle de messagerie, donc on filtre par SMTP, on voit que les trames sont encodées en base64
+On a un contenu texte:
+
+        ClNhbHV0IEplYW4gIQoKSidlc3DDqHJlIHF1ZSB0b3V0IHZhIGJpZW4gZGUgdG9uIGPDtHTDqS4g
+        SidhaSBxdWVscXVlIGNob3NlIMOgIHBhcnRhZ2VyIHF1aSBtZSB0cmFjYXNzZSB1biBwZXUuIEVu
+        IGZhaXNhbnQgdW4gdG91ciBzdXIgbm90cmUgc3lzdMOobWUsIGonYWkgcmVtYXJxdcOpIHF1ZSBu
+        b3VzIHV0aWxpc29ucyB1biBwcm90b2NvbGUgbm9uIGNoaWZmcsOpIHBvdXIgbCdlbnZvaSBkJ2Ut
+        bWFpbHMuCgpKZSBuZSBzdWlzIHBhcyB1biBleHBlcnQsIG1haXMgamUgbSdpbnF1acOodGUgdW4g
+        cGV1IHF1ZSBkZXMgcGVyc29ubmVzIGluZMOpc2lyYWJsZXMgcG91cnJhaWVudCBwb3RlbnRpZWxs
+        ZW1lbnQgaW50ZXJjZXB0ZXIgbm9zIGUtbWFpbHMuIFR1IGFzIHBldXQtw6p0cmUgcmVtYXJxdcOp
+        IMOnYSBhdXNzaS4KClBldXQtw6p0cmUgcG91cnJpb25zLW5vdXMgZGlzY3V0ZXIgZGUgY2VsYSBh
+        dXRvdXIgZCd1biBjYWbDqSBsYSBzZW1haW5lIHByb2NoYWluZSA/IEonYWltZXJhaXMgYXZvaXIg
+        dG9uIGF2aXMgbMOgLWRlc3N1cyBldCB2b2lyIHNpIG5vdXMgcG91dm9ucyB0cm91dmVyIHVuZSBz
+        b2x1dGlvbiBlbnNlbWJsZS4KCkplIHJham91dGUgZW4gcGnDqGNlIGpvaW50ZSBsZSBwbGFuIGRl
+        IGwnaW5mcmFzdHJ1Y3R1cmUgcsOpc2VhdSwgZXQgaidhaSBlbnRvdXLDqSBkJ3VuIGNlcmNsZSBy
+        b3VnZSBsZSBzZXJ2ZXVyIHF1aSBtZSBzZW1ibGUgaW1wYWN0w6kgcGFyIGNlIHByb2Jsw6htZSBk
+        ZSBjb25maWd1cmF0aW9uLgoKRmFpcy1tb2kgc2F2b2lyIHNpIGNlbGEgdGUgY29udmllbnQgIQoK
+        w4AgYmllbnTDtHQsCgo=
+
+Traduit:
+
+Salut Jean !
+
+J'espère que tout va bien de ton côté. J'ai quelque chose à partager qui me tracasse un peu. En faisant un tour sur notre système, j'ai remarqué que nous utilisons un protocole non chiffré pour l'envoi d'e-mails.
+
+Je ne suis pas un expert, mais je m'inquiète un peu que des personnes indésirables pourraient potentiellement intercepter nos e-mails. Tu as peut-être remarqué ça aussi.
+
+Peut-être pourrions-nous discuter de cela autour d'un café la semaine prochaine ? J'aimerais avoir ton avis là-dessus et voir si nous pouvons trouver une solution ensemble.
+
+Je rajoute en pièce jointe le plan de l'infrastructure réseau, et j'ai entouré d'un cercle rouge le serveur qui me semble impacté par ce problème de configuration.
+
+Fais-moi savoir si cela te convient !
+
+À bientôt,
+
+On a dans le mail aussi un attachement nommé "topology.png", donc très certainement une topologie réseau, qui représente les différents serveurs, comme mentionné dans le mail, notemment celui dans le mail.
+
+Je met pas les données de l'image mais je l'ai reconstruite via les données brute dela frame réseau
+Sur l'image on a le flag
+FLAG{8cce4acba46e1a946d47ca51ff3b6137}
+
+

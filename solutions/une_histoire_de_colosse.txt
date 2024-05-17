@@ -1,0 +1,11 @@
+On lit les notes, on en déduit que les messages sont en code de lorenz.
+
+Avant les messages chiffrés, on a certaines informations
+ SZ40 (type de machine) 5/8/9 (paramètres à utiliser) PT(Veut dire plaintext) et ensuite le message chiffré
+On utilise les x et phis donnés dans les notes on déchiffre les blocs
+
+Partie 2:
+On dechiffre le second bloc avec le meme raisonnement 
+On obtient
+19(5)/2(5)/5(2)/26(1)/47(1)/2(2)/7(2)/2(5)/59(1)/2(4)/24(1)/9(1)/59(1)/24(1)/81(2)/5(2)/10(1) 
+Et mainteant on a juste prendre chaque lettre correspond à la position du numéro à partir du départ du second bloc

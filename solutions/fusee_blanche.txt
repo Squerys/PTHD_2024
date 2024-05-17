@@ -1,0 +1,3 @@
+On nous demande de trouver ou se trouve le vélo --> Métadonnées EXIF
+On ouvre la photo dans le logiciel approrié, le modèle de l'appareil photo est le flag
+On a le flag

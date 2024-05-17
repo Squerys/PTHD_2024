@@ -1,0 +1,47 @@
+--- Copie du prog des calculs mais pour correspondre à l'énoncé ----
+
+
+import socket
+
+
+HOST = "37.59.31.202" #Adresse du serveur
+PORT = 2000 #Port utilisé
+
+def is_valid_parentheses(string):
+    stack = []
+    opening_brackets = ['(', '[', '{']
+    closing_brackets = [')', ']', '}']
+    
+    for char in string:
+        if char in opening_brackets:
+            stack.append(char)
+        elif char in closing_brackets:
+            if not stack:
+                return False
+            last_opening_bracket = stack.pop()
+            if opening_brackets.index(last_opening_bracket) != closing_brackets.index(char):
+                return False
+    return len(stack) == 0
+
+# Exemple d'utilisation
+string = "{()[]}"
+print(is_valid_parentheses(string))  # Output: True
+
+string = "{[])(}"
+print(is_valid_parentheses(string))  # Output: False
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock: #Initialise un socket (dialogue serveur client)
+        print(sock.connect((HOST, PORT))) #Se connecte au serveur
+        print(sock.recv(1024)) #Reçoit les données (ici la demande du choix de la difficulté)
+        print(sock.sendall(b"3\n")) #On envoie 3 pour choisir l'epreuve appropriée
+        print(sock.recv(1024)) #On reçoit la réponse ici "Evaluer les équations suivantes"
+        for _ in range(100): #Pour les 100 prochains calculs
+            data = sock.recv(1024) #On reçoit le calcul
+            print(data.decode()) #On le décode
+            result = is_valid_parentheses(data.decode()) #On utilise eval, pour faire le calcul
+            print(result) #Affiche le résultat 
+            sock.sendall(str(result).encode()) #On envoie le resultat 
+        print(sock.recv(1024).decode()) #On affiche le flag final
+
+main() #Execute main()

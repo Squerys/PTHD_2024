@@ -1,0 +1,8 @@
+On a le nom de la personne "Remi Droit"
+
+On se connecte avec le login, cela nous met un url du type
+lesite.com/profile/notrenom
+
+En lisant contact, on a un nom d'utilisateur "remidu35"
+lesite.com/profile/remidu35
+et on a son billet, plus qu'à le scanner et on aura le flag

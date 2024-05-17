@@ -1,0 +1,6 @@
+On a un disque virtuel on l'ouvre avec un gestionnaire d'archive type 7zip
+On a aussi un fichier de log de process monitor
+
+Dans le vhd, il y a faux dossier tmp, on ouvre, plein de vbs et on voit que le dossier est caché
+On ouvre process internals, l'interpréteur vbs de windows étant wscript.exe, on regarde le premier vbs execute du dossier tmp
+On l'ouvre et on trouve le flag

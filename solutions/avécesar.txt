@@ -1,0 +1,6 @@
+Indice de l'énoncé probablement du code de césar 
+STRING: IODJ{YHqL_YlgL_YLfl}
+On cherche FLAG{QQCHOSE}
+En le passant dans un outil pour tester tout les décallages pour les 26 lettres, on a
+🠞3 (🠜23)	FLAG{VEnI_VidI_VIci}
+On a donc le flag

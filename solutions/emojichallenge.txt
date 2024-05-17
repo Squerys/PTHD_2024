@@ -1,0 +1,5 @@
+
+L'authentification est côté client, le code js se génère au moment de l'execution.
+On pose donc un point d'arret, on déobfusque et on log la variable du mot de passe.
+On peut donc reconstituer la variable de password avec le code généré au runtime
+Et on a le flag

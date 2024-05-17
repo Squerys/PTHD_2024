@@ -1,0 +1,55 @@
+Le fichier est un executable elf, programmé en C
+
+On l'ouvre dans Ghidra, on liste toute les fonctions, une s'appelle "exfitration", on la traduit:
+- Elle copie la chaîne de caractères passée en paramètre (param_1) dans une variable locale appelée local_458.
+- Elle déobfusque la chaîne de caractères en appelant la fonction obfuscator avec la chaîne de caractères et la valeur '\x7f' comme clé.
+- Elle crée un socket en appelant la fonction socket(2, 1, 0) (famille d'adresse IPv4, type de socket SOCK_STREAM).
+- Si la création du socket échoue, elle affiche un message d'erreur sur std::cerr.
+- Si la création du socket réussit, elle initialise une structure sockaddr appelée local_468 avec des valeurs spécifiques, notamment la famille d'adresse 2 (AF_INET).
+- Elle tente de se connecter au serveur distant en utilisant la fonction connect avec le descripteur de fichier du socket, la structure - local_468, et la taille 0x10.
+- Si la connexion échoue, elle affiche un message d'erreur sur std::cerr et ferme le socket.
+- Si la connexion réussit, elle envoie une certaine quantité de données (représentées par &DAT_00104051) au serveur en utilisant la fonction send.
+- Elle reçoit des données du serveur dans le tampon local_418 en utilisant la fonction recv.
+- Elle affiche le contenu de local_418 sur std::cout.
+- Elle ferme le socket
+On en déduit donc, qu'on a besoin de 2 choses, le param_1 et la fonction obfuscate:
+On peut traduire la fonction obfuscate comme ça:
+- Elle prend 3 paramètres, la chaine de caractère à déobfusquer, la longueur de la chaine à déobfusquer, la clé
+- Pour tout la longueur de la chaine, elle renvoie le xor de la clé et de la lettre
+- Une fois qu'elle a itéré dans toute la chaine, la modification est terminée
+
+On a obfuscator mais il nous manque toujours le param_1, pour cela il faut trouver quand est appelé, on trouve que c'est la fonction makecall():
+exfiltration("\x1b\x1e\v\x1e\f\v\x1a\x1e\x13\x1a\rQ\x1c\x11");
+
+Nous avons tout les éléments pour programmer l'outil qui affichera le domaine:
+#include <stdio.h>
+#include <cstring>
+
+void obfuscator (char *param_1, long param_2, char param_3 )
+{
+  long local_10;
+  
+  for (local_10 = 0; local_10 < param_2; local_10 = local_10 + 1) {
+    param_1[local_10] = param_1[local_10] ^ param_3;
+  }
+  printf(param_1);
+  return;
+}
+
+void exfiltration(char *param_1)
+{
+  char local_458 [64];
+  size_t sVar2;
+  strcpy(local_458,param_1);
+  sVar2 = strlen(local_458);
+  obfuscator(local_458,sVar2,'\x7f');
+}
+
+
+int main()
+{
+    exfiltration("\x1b\x1e\v\x1e\f\v\x1a\x1e\x13\x1a\rQ\x1c\x11");
+    return 0;
+}
+et cela nous affiche le domaine
+On chiffre le domaine en md5 et on a le flag

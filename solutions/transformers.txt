@@ -1,0 +1,11 @@
+Le site affiche en apparence un site en maintenance
+L'énoncé nous donne un indice "Association française anti-robot", le fichier robots.txt est un fichier standard permettant de bloquer les users-agent correspondant à des robots, on a:
+
+* Disallow
+/inscriptions.html
+
+On va donc à url/inscriptions.html
+
+On a le formulaire d'inscription mais le bouton submit qui appelle la fonction "RedirectCongratz()" qu'on suppose comme étant la condition de victoire
+
+On lui enlève l'attribut disabled et on a accès au flag

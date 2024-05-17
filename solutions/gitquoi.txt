@@ -1,0 +1,7 @@
+On trouve le github en cherchant sur internet
+En explorant le profil on trouve
+flag.notes (à déchiffrer) et une repository appelée CryptoBreaker mais supprimée
+On cherche encore un peu on trouve un script python qui demande un mot de passe
+On le trouve dans le script hashé en md5, on le crack on trouve "Monty_Python"
+On rentre le mdp, on passe la note chiffrée dans le programme mais ça ne marche pas
+Hugo a trouvé un fichier config.cfg avec la bonne clé, on le met dans le meme répertoire et c'est bon

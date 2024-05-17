@@ -1,0 +1,1 @@
+il faut éditer le programme fx92, pour qu'il supporte la notation polonaise préfixe, en gros remplacer le eval() par une fonction qui calcule la polonaise préfixe
